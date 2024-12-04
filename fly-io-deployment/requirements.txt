@@ -1,1 +1,2 @@
-chainlit
+chainlit==1.0.400
+anthropic
