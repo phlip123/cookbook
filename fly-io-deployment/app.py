@@ -31,7 +31,7 @@ def construct_system_prompt():
 
 async def stream_claude_step(step, system_prompt, messages, initial_step=False):
     """Streams conversation steps with the Claude model."""
-    settings = {"max_tokens": 1024, "model": "claude-3-haiku-20240307"}
+    settings = {"max_tokens": 1024, "model": "claude-3-5-sonnet-20241022"}
 
     async with step as current_step:
         async with anthropic_client.messages.stream(
@@ -61,9 +61,9 @@ async def start_claude_conversation():
     cl.user_session.set("prompt_history", [])
     
     avatar_url = "https://www.anthropic.com/images/icons/apple-touch-icon.png"
-    await cl.Avatar(name="Claude", url=avatar_url).send()
+    await cl.Avatar(name="Claude 3.5 Sonnet", url=avatar_url).send()
 
-    step = cl.Step(name="Claude", type="llm", root=True)
+    step = cl.Step(name="Claude 3.5 Sonnet", type="llm", root=True)
     system_prompt = construct_system_prompt()
     messages = [{
         "role": "user",
