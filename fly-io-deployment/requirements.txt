@@ -1,2 +1,4 @@
 chainlit==1.0.400
-anthropic
+pydantic==2.4.2
+anthropic==0.25.8
+httpx==0.24.1
